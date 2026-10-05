@@ -1,0 +1,9 @@
+Test 2 — only if test 1 also fails
+
+Set Video1.Media to:
+
+"https://www.w3schools.com/html/mov_bbb.mp4"
+Plays → control is healthy, the SharePoint URL format is the issue
+Doesn't play → something in the app is blocking the control
+
+Put Media back to locSelectedVideoGUID afterwards.
