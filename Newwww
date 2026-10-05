@@ -1,0 +1,25 @@
+Second: three temporary labels
+
+Put these on the Selected Video screen, play the app, and tell me what each shows.
+
+Label 1 — is the video URL arriving?
+
+locSelectedVideoGUID
+
+Label 2 — did the transcript load?
+
+"Chars: " & Len(varVtt) & " | Cues: " & CountRows(colCues)
+
+Label 3 — is the screen stuck in expanded mode?
+
+"Big: " & varBig & " | W: " & Video1.Width & " | H: " & Video1.Height
+What the answers will mean
+Label 1	Meaning
+Full https://…mp4 URL	The video has its source; the problem is the control or its layering
+Blank	Navigate isn't passing it, so Video1.Media has nothing to play
+Label 2	Meaning
+Chars 20000+, Cues 199	Flow and parsing both fine; the caption control is the issue
+Chars 0, Cues 0	OnVisible isn't reaching the flow, or the output name changed on re-add
+Label 3	Meaning
+Big: true	Stuck expanded, so controls may sit off-screen
+W: 0 or H: 0	The video is collapsed to nothing — a sizing formula broke
