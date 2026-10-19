@@ -1,0 +1,7 @@
+```mermaid
+flowchart TD
+    A[Trigger: When item created] --> B[Get item details]
+    B --> C{Approved?}
+    C -->|Yes| D[Send email]
+    C -->|No| E[Update status]
+    
