@@ -1,0 +1,22 @@
+Read the attached flow JSON. It is a Power Automate cloud flow from an exported Power Platform solution.
+Get its display name from the attached customizations.xml (match JsonFileName).
+
+Create docs/flows/feedback-auto-delete.md, technical documentation for admins:
+
+# Flow: <display name>
+## Purpose (2-3 lines, plain English)
+## Trigger (type, table or schedule, trigger conditions)
+## Connection references (table: name | connector)
+## Environment variables used
+## Steps (table: # | Action name | Type | What it does) – order by runAfter, include nested actions inside Condition / Scope / Apply to each
+## Flow diagram (Mermaid flowchart TD)
+## Key expressions (trigger conditions, conditions, filter queries, variables – each in its own code block)
+## Error handling (runAfter Failed/TimedOut, scopes)
+## Dependencies (Dataverse tables, child flows, apps)
+## Troubleshooting (likely failure points)
+
+Rules:
+- Use only what is in the JSON. Unclear → write "TBD – confirm".
+- Never invent table names, values or URLs.
+- Expressions in code blocks, never inside tables.
+- Do not modify or delete any existing files. Only create the new .md file.
